@@ -1,541 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuan-Sheng Hsu | M.D., Ph.D.</title>
-    <meta name="description" content="Physician-scientist with dual M.D./Ph.D. combining deep biomedical domain expertise with hands-on data analytics experience.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yuan-Sheng (Jan) Hsu — Physician-scientist</title>
+<meta name="description" content="Physician-scientist in bone and mineral health and clinical pharmacoepidemiology — polygenic risk scores for osteoporotic fracture, real-world evidence, and causal inference." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:   #FCFCFB; --paper-2: #F3F5F4;
+    --ink:     #1A1D21; --ink-soft:#3D444C;
+    --slate:   #666F78; --slate-dim:#98A0A7;
+    --line:    #E6E9E7; --line-2:  #D6DBD8;
+    --accent:  #1F6FA8; --accent-soft:#EAF2F8;
+    --serif: "Source Serif 4", Georgia, serif;
+    --grotesk: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --maxw: 940px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--serif); font-size:18px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  ::selection{ background:var(--accent-soft); }
+  a{ color:inherit; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 26px; }
+  .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--slate); margin:0; }
 
-        body {
-            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 300;
-            color: #333;
-            background-color: #fff;
-            line-height: 1.8;
-            font-size: 16px;
-        }
+  .topbar{ border-bottom:1px solid var(--line); }
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; height:62px; }
+  .mark{ font-family:var(--mono); font-size:13px; letter-spacing:.04em; text-decoration:none; color:var(--ink); }
+  .mark b{ color:var(--accent); font-weight:500; }
+  .nav{ display:flex; gap:24px; }
+  .nav a{ font-family:var(--mono); font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--slate); text-decoration:none; transition:color .2s; }
+  .nav a:hover{ color:var(--ink); }
+  @media (max-width:600px){ .nav{ display:none; } }
 
-        a {
-            color: #333;
-            text-decoration: underline;
-            transition: opacity 0.2s ease;
-        }
+  .hero{ padding:74px 0 60px; }
+  .hero-grid{ display:grid; grid-template-columns:1.08fr .92fr; gap:48px; align-items:center; }
+  .hero h1{ font-family:var(--grotesk); font-weight:500; font-size:clamp(32px,5vw,52px); line-height:1.06; letter-spacing:-.02em; margin:.5rem 0 .1rem; color:var(--ink); }
+  .hero .name{ display:block; font-family:var(--mono); font-size:clamp(14px,2.2vw,17px); letter-spacing:.02em; color:var(--slate); margin-bottom:16px; }
+  .hero .thesis{ font-size:clamp(16px,2.1vw,19px); color:var(--ink-soft); max-width:36ch; margin:18px 0 0; }
+  .hero .thesis .hl{ color:var(--accent); font-style:italic; }
+  .id-row{ display:flex; align-items:center; gap:16px; margin-bottom:4px; }
+  .id-row .portrait{ width:104px; height:104px; border-radius:12px; object-fit:cover; border:1px solid var(--line-2); background:var(--paper-2); flex:none; }
+  .id-row .id-meta .eyebrow{ margin-bottom:6px; }
+  .id-row .id-meta .name{ margin-bottom:0; }
+  @media (max-width:800px){ .id-row .portrait{ width:88px; height:88px; } }
 
-        a:hover {
-            opacity: 0.7;
-        }
+  .figure{ border:1px solid var(--line-2); border-radius:8px; padding:16px 16px 12px; background:#fff; }
+  .figure-cap{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+  .figure-cap span{ font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--slate-dim); }
+  .strata-svg{ width:100%; height:auto; display:block; }
+  .band-label{ font-family:var(--mono); font-size:11.5px; fill:var(--slate); }
+  .band-index{ font-family:var(--mono); font-size:10px; fill:var(--slate-dim); }
+  .grid-line{ stroke:var(--line); stroke-width:1; }
+  .thread{ fill:none; stroke:var(--accent); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .node{ fill:#fff; stroke:var(--accent); stroke-width:2; }
+  .thread{ stroke-dasharray:640; stroke-dashoffset:640; }
+  .animate .thread{ animation:draw 1.9s cubic-bezier(.65,.02,.28,1) .3s forwards; }
+  .node{ opacity:0; }
+  .animate .node{ animation:pop .35s ease forwards; }
+  .animate .node.n1{ animation-delay:.8s; } .animate .node.n2{ animation-delay:1.15s; }
+  .animate .node.n3{ animation-delay:1.5s; } .animate .node.n4{ animation-delay:1.85s; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes pop{ from{ opacity:0; transform:scale(.4); } to{ opacity:1; transform:scale(1); } }
+  @media (max-width:800px){ .hero-grid{ grid-template-columns:1fr; gap:34px; } .hero{ padding:48px 0 42px; } }
 
-        /* Header / Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            border-bottom: 1px solid #e8e8e8;
-            z-index: 100;
-            padding: 20px 40px;
-        }
+  section.block{ padding:56px 0; border-top:1px solid var(--line); }
+  .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:30px; }
+  .section-head .num{ font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.08em; }
+  .section-head h2{ font-family:var(--grotesk); font-weight:500; font-size:clamp(20px,2.8vw,27px); letter-spacing:-.01em; margin:0; color:var(--ink); }
+  .rule{ flex:1; height:1px; background:var(--line); align-self:center; }
 
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  .about-grid{ display:grid; grid-template-columns:1.45fr 1fr; gap:44px; }
+  .about-grid p{ margin:0 0 1rem; color:var(--ink-soft); }
+  .about-grid p strong{ color:var(--ink); font-weight:600; }
+  .caps{ border-left:1px solid var(--line-2); padding-left:20px; }
+  .cap-row{ margin-bottom:16px; }
+  .cap-row .k{ font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--slate-dim); margin-bottom:6px; }
+  .cap-row .v{ font-family:var(--mono); font-size:12.5px; line-height:1.8; color:var(--slate); }
+  .cap-row .v b{ color:var(--ink-soft); font-weight:500; }
+  @media (max-width:720px){ .about-grid{ grid-template-columns:1fr; gap:28px; } }
 
-        .site-title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-        }
+  .plate{ display:grid; grid-template-columns:168px 1fr; gap:30px; padding:28px 0; border-top:1px solid var(--line); }
+  .plate:first-of-type{ border-top:none; padding-top:4px; }
+  .plate .meta .kind{ font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; }
+  .plate .meta .venue{ font-family:var(--mono); font-size:12px; color:var(--slate); line-height:1.7; }
+  .plate .meta .doi{ font-family:var(--mono); font-size:11.5px; color:var(--slate-dim); text-decoration:none; word-break:break-all; display:inline-block; margin-top:6px; border-bottom:1px solid transparent; transition:color .2s,border-color .2s; }
+  .plate .meta .doi:hover{ color:var(--accent); border-color:var(--accent); }
+  .plate h3{ font-family:var(--grotesk); font-weight:500; font-size:20px; line-height:1.28; margin:0 0 9px; color:var(--ink); letter-spacing:-.01em; }
+  .plate p{ margin:0 0 16px; color:var(--ink-soft); font-size:16.5px; max-width:60ch; }
+  .readouts{ display:flex; flex-wrap:wrap; gap:12px; }
+  .readout{ background:var(--paper-2); border:1px solid var(--line); border-radius:7px; padding:9px 13px; min-width:104px; }
+  .readout .val{ font-family:var(--grotesk); font-weight:600; font-size:19px; color:var(--accent); letter-spacing:-.01em; }
+  .readout .lbl{ font-family:var(--mono); font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:var(--slate-dim); margin-top:3px; }
+  .readout.plain .val{ color:var(--ink); }
+  @media (max-width:660px){ .plate{ grid-template-columns:1fr; gap:14px; } .plate .meta{ display:flex; flex-wrap:wrap; gap:6px 16px; align-items:baseline; } }
 
-        .site-title a {
-            text-decoration: none;
-            color: #333;
-        }
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
 
-        nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 40px; max-width:600px; }
+  .contact-row{ display:flex; align-items:baseline; gap:12px; padding:13px 0; border-bottom:1px solid var(--line); }
+  .contact-row .k{ font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--slate-dim); width:76px; flex:none; }
+  .contact-row a, .contact-row .todo, .contact-row .plainv{ font-family:var(--mono); font-size:14px; text-decoration:none; border-bottom:1px solid transparent; transition:border-color .2s,color .2s; }
+  .contact-row a{ color:var(--ink); }
+  .contact-row a:hover{ color:var(--accent); border-color:var(--accent); }
+  .contact-row .plainv{ color:var(--ink); }
+  .contact-row .todo{ color:var(--slate-dim); }
+  @media (max-width:540px){ .contact-grid{ grid-template-columns:1fr; } }
 
-        nav a {
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 400;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-        }
+  footer{ padding:34px 0 50px; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  footer p{ font-family:var(--mono); font-size:11.5px; color:var(--slate-dim); letter-spacing:.03em; margin:0; }
 
-        /* Main Content */
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 120px 40px 80px;
-        }
-
-        /* Page Title */
-        .page-title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.02em;
-        }
-
-        .page-description {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            gap: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .hero-image {
-            flex-shrink: 0;
-        }
-
-        .hero-image img {
-            width: 200px;
-            height: auto;
-            display: block;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-content h1 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 2.5rem;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
-        }
-
-        .hero-content h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.35rem;
-            font-weight: 400;
-            text-align: center;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .hero-content h3 strong {
-            font-weight: 600;
-        }
-
-        .hero-links {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .hero-links a {
-            margin: 0 0.3rem;
-        }
-
-        .bio {
-            font-size: 0.95rem;
-            line-height: 1.9;
-            color: #444;
-        }
-
-        .bio p {
-            margin-bottom: 1rem;
-        }
-
-        /* Horizontal Rule */
-        hr {
-            border: none;
-            border-top: 1px solid #e8e8e8;
-            margin: 3rem 0;
-        }
-
-        /* Section Headers */
-        .section-header {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.75rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.02em;
-        }
-
-        /* Resume Section */
-        .resume-section {
-            margin-bottom: 2.5rem;
-        }
-
-        .resume-section-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #333;
-            margin-bottom: 1.5rem;
-        }
-
-        .resume-item {
-            display: grid;
-            grid-template-columns: 145px 1fr;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .resume-item:last-child {
-            border-bottom: none;
-        }
-
-        .resume-date {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .resume-details h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: #333;
-        }
-
-        .resume-details .institution {
-            font-size: 0.95rem;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-
-        .resume-details p {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .skill-category h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.75rem;
-            color: #333;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 0.35rem;
-        }
-
-        /* News Section */
-        .news-list {
-            font-size: 0.95rem;
-        }
-
-        .news-item {
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-
-        .news-date {
-            color: #888;
-            margin-right: 0.5rem;
-        }
-
-        .news-content strong {
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 40px;
-            text-align: center;
-            color: #888;
-            font-size: 0.85rem;
-            border-top: 1px solid #e8e8e8;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                gap: 1.5rem;
-            }
-
-            main {
-                padding: 140px 20px 60px;
-            }
-
-            .hero {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .hero-image img {
-                width: 160px;
-            }
-
-            .resume-item {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+    .thread{ stroke-dashoffset:0; } .node{ opacity:1; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="site-title">
-                <a href="#">Yuan-Sheng Hsu</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">Home</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#news">News</a></li>
-                </ul>
-            </nav>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top">Jan&nbsp;<b>Hsu</b></a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#work">Selected work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="id-row">
+          <img class="portrait" src="https://yuanshenghsu.github.io/webpage/profile.jpg" alt="Portrait of Yuan-Sheng (Jan) Hsu" />
+          <div class="id-meta">
+            <p class="eyebrow">Physician-scientist · Taichung, Taiwan</p>
+            <span class="name">Yuan-Sheng (Jan) Hsu · MD-PhD</span>
+          </div>
         </div>
-    </header>
+        <h1>Evidence that holds up, across every layer.</h1>
+        <p class="thesis">I connect what usually stays separate — the clinic, the bench, the code, and population-scale data — to sharpen how we predict and prevent <span class="hl">osteoporotic fracture</span> and <span class="hl">skeletal disease</span>.</p>
+      </div>
+      <div class="figure" id="strata">
+        <div class="figure-cap"><span>Fig. 1</span><span>one thread · four layers</span></div>
+        <svg class="strata-svg" viewBox="0 0 360 250" role="img" aria-label="A single line of evidence threading through four layers of work: clinical care, wet lab, dry lab, and real-world evidence.">
+          <line class="grid-line" x1="16" y1="45"  x2="344" y2="45"/>
+          <line class="grid-line" x1="16" y1="105" x2="344" y2="105"/>
+          <line class="grid-line" x1="16" y1="165" x2="344" y2="165"/>
+          <line class="grid-line" x1="16" y1="225" x2="344" y2="225"/>
+          <text class="band-index" x="16" y="30">L1</text><text class="band-label" x="40" y="30">Clinical care</text>
+          <text class="band-index" x="16" y="90">L2</text><text class="band-label" x="40" y="90">Wet lab</text>
+          <text class="band-index" x="16" y="150">L3</text><text class="band-label" x="40" y="150">Dry lab</text>
+          <text class="band-index" x="16" y="210">L4</text><text class="band-label" x="40" y="210">Real-world evidence</text>
+          <polyline class="thread" points="40,45 112,45 150,105 214,105 250,165 300,165 322,225 344,225"/>
+          <circle class="node n1" cx="40"  cy="45"  r="4.5"/>
+          <circle class="node n2" cx="150" cy="105" r="4.5"/>
+          <circle class="node n3" cx="250" cy="165" r="4.5"/>
+          <circle class="node n4" cx="322" cy="225" r="4.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <main>
-        <h1 class="page-title">Home</h1>
-        <p class="page-description">Physician-scientist combining deep biomedical domain expertise with hands-on data analytics experience.</p>
+<main>
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="section-head"><span class="num">§ 01</span><h2>About</h2><span class="rule"></span></div>
+      <div class="about-grid">
+        <div>
+          <p>I'm a <strong>physician-scientist in Taichung, Taiwan</strong>, working in <strong>bone and mineral health</strong> and <strong>clinical pharmacoepidemiology</strong>. I trained as an MD-PhD at China Medical University; my doctoral research, in the Wen-Hwa Lee lab at Academia Sinica, examined how metabolism drives genome instability.</p>
+          <p>My current program builds and validates <strong>polygenic risk scores for osteoporotic fracture</strong> in a Taiwanese DXA-linked biobank, and runs real-world evidence studies of skeletal disease across federated networks — with the causal-inference methods (target trial emulation, propensity scores) that observational data demand. It's mentored by Dr. Kun-Huei Chen, Chair of Orthopedic Surgery at Taichung Veterans General Hospital.</p>
+          <p>The through-line is moving cleanly between scales — mechanism, translation, and population evidence — so a finding means the same thing at the bench as it does in the clinic.</p>
+        </div>
+        <div class="caps">
+          <div class="cap-row"><div class="k">Methods</div><div class="v">Cox · <b>Fine-Gray</b> competing risk · RCS<br/>PRS-CS · LDpred2 · PLINK<br/>Target trial emulation · propensity · E-value</div></div>
+          <div class="cap-row"><div class="k">Code</div><div class="v">R <b>(survival, rms)</b><br/>Python <b>(scikit-learn, PyTorch)</b><br/>SQL · Linux · Git · Jupyter</div></div>
+          <div class="cap-row"><div class="k">Bench</div><div class="v">LC-MS metabolomics<br/>Multiplex IHC (RNAscope) · high-content imaging</div></div>
+          <div class="cap-row"><div class="k">Languages</div><div class="v">中文 <b>(native)</b> · English <b>(fluent)</b><br/>日本語 <b>(N1)</b> · Deutsch <b>(Goethe B2)</b></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="hero" id="about">
-            <div class="hero-image">
-                <!-- Make sure to upload profile.jpg to your GitHub repository -->
-                <img src="profile.jpg" alt="Yuan-Sheng Hsu">
-            </div>
-            <div class="hero-content">
-                <h1>Yuan-Sheng Hsu, M.D., Ph.D.</h1>
-                <h3>I am a <strong>Physician-Scientist</strong> with a dual M.D./Ph.D., combining deep biomedical domain expertise with hands-on data analytics experience.</h3>
-                <p class="hero-links">
-                    <a href="#">CV</a> | 
-                    <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> | 
-                    <a href="https://orcid.org/0009-0004-8990-9823" target="_blank">ORCID</a> | 
-                    <a href="https://www.linkedin.com/in/jan-hsu-6794aa2ab/" target="_blank">LinkedIn</a> | 
-                    <a href="https://github.com/YuanShengHsu" target="_blank">GitHub</a>
-                </p>
-                <div class="bio">
-                    <p>I am a physician at <a href="https://www.vghtc.gov.tw/" target="_blank">Taichung Veterans General Hospital</a> with a Ph.D. from China Medical University under the supervision of Academician Wen-Hwa Lee at the <strong>Genomics Research Center, Academia Sinica</strong>. My doctoral research focused on metabolic mechanisms of cancer initiation, specifically investigating how high-sugar diets induce pancreatic DNA damage through <strong>O-GlcNAcylation</strong> and <strong>nucleotide metabolism disruption</strong>.</p>
-                    <p>I am skilled in mining large-scale hospital datasets (400K+ samples) with <strong>SQL</strong> and bioinformatics pipelines. My experience spans genome-wide association studies (<strong>GWAS</strong>), case-control study design, LC-MS metabolomics, and high-content imaging assays applicable to drug screening workflows. I combine proficiency in <strong>R, Python, and Linux</strong> with deep biomedical knowledge.</p>
-                    <p>I am actively seeking to apply my scientific and analytical acumen to biotech investment analysis and drug development evaluation. My research and clinical experience provide unique insights into translating scientific discoveries into therapeutic opportunities.</p>
-                </div>
-            </div>
-        </section>
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="section-head"><span class="num">§ 02</span><h2>Selected work</h2><span class="rule"></span></div>
 
-        <hr>
+      <article class="plate reveal">
+        <div class="meta">
+          <p class="kind">Genomics · fracture prediction</p>
+          <div class="venue">ASBMR 2026<br/>Manuscript in preparation</div>
+        </div>
+        <div>
+          <h3>Polygenic scores for 5-year osteoporotic fracture risk</h3>
+          <p>Benchmarked 66 published polygenic scores for bone density, then tested whether the strongest one adds real predictive value for major osteoporotic fracture in peri-menopausal Han Chinese women — beyond the clinical factors already in use — using Fine-Gray competing-risk models and BMD-stratified analysis.</p>
+          <div class="readouts">
+            <div class="readout"><div class="val">+0.055</div><div class="lbl">ΔAUC vs. clinical</div></div>
+            <div class="readout"><div class="val">4.16×</div><div class="lbl">OR, top vs. bottom quartile</div></div>
+            <div class="readout plain"><div class="val">66</div><div class="lbl">scores benchmarked</div></div>
+          </div>
+        </div>
+      </article>
 
-        <section id="resume">
-            <h2 class="section-header">Resume</h2>
+      <article class="plate reveal">
+        <div class="meta">
+          <p class="kind">Clinical epidemiology</p>
+          <div class="venue">Archives of Osteoporosis · 2026 (21:83)<br/>First author</div>
+          <a class="doi" href="https://doi.org/10.1007/s11657-026-01711-y" target="_blank" rel="noopener">doi.org/10.1007/s11657-026-01711-y</a>
+        </div>
+        <div>
+          <h3>Osteoporosis risk in alpha and beta thalassemia</h3>
+          <p>An age- and sex-specific retrospective cohort study quantifying how thalassemia raises osteoporosis and fracture risk — the kind of screening question that only resolves at population scale, and that changes when at-risk patients should be checked.</p>
+          <div class="readouts">
+            <div class="readout plain"><div class="val">Published</div><div class="lbl">Archives of Osteoporosis</div></div>
+            <div class="readout plain"><div class="val">First author</div><div class="lbl">age- &amp; sex-specific cohort</div></div>
+          </div>
+        </div>
+      </article>
 
-            <div class="resume-section">
-                <h3 class="resume-section-title">Education</h3>
-                <div class="resume-item">
-                    <span class="resume-date">2015 – 2024</span>
-                    <div class="resume-details">
-                        <h4>M.D. / Ph.D. in Medicine</h4>
-                        <p class="institution">China Medical University, Taichung, Taiwan</p>
-                        <p>Ph.D. Advisor: Academician Wen-Hwa Lee, Genomics Research Center, Academia Sinica<br>
-                        Dissertation: High-sugar diet-induced pancreatic DNA damage and oncogenic mechanisms via O-GlcNAcylation and dNTP pool imbalance</p>
-                    </div>
-                </div>
-            </div>
+      <article class="plate reveal">
+        <div class="meta">
+          <p class="kind">Mechanistic foundation</p>
+          <div class="venue">Am. J. Cancer Research · 2022<br/>First author · PhD dissertation</div>
+        </div>
+        <div>
+          <h3>Differential effects of glucose and N-acetylglucosamine on genome instability</h3>
+          <p>My doctoral work: how distinct sugars drive DNA damage through O-GlcNAcylation and nucleotide-pool disruption, combining animal models, LC-MS metabolomics, and high-content imaging. It's the bench grounding for how I weigh mechanistic evidence today.</p>
+          <div class="readouts">
+            <div class="readout plain"><div class="val">First author</div><div class="lbl">AJCR 2022;12(4)</div></div>
+            <div class="readout plain"><div class="val">Wet + dry</div><div class="lbl">LC-MS · imaging</div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-            <div class="resume-section">
-                <h3 class="resume-section-title">Professional Experience</h3>
-                <div class="resume-item">
-                    <span class="resume-date">Mar 2025 – Present</span>
-                    <div class="resume-details">
-                        <h4>Physician</h4>
-                        <p class="institution">Veterans General Hospital Taichung, Taiwan</p>
-                        <p>Provide patient care across clinical departments with exposure to treatment decision-making, drug efficacy evaluation, and real-world evidence of pharmaceutical interventions. Participate in departmental research and manuscript preparation.</p>
-                    </div>
-                </div>
-                <div class="resume-item">
-                    <span class="resume-date">Sep 2024 – Mar 2025</span>
-                    <div class="resume-details">
-                        <h4>Substitute Military Service</h4>
-                        <p class="institution">Ministry of National Defense, Hualien, Taiwan</p>
-                    </div>
-                </div>
-                <div class="resume-item">
-                    <span class="resume-date">Sep 2022 – Aug 2024</span>
-                    <div class="resume-details">
-                        <h4>Clinical Data Analyst</h4>
-                        <p class="institution">China Medical University Hospital, Taichung, Taiwan</p>
-                        <p>Built and queried hospital data warehouse (400K+ patient samples) using SQL and ICD diagnostic codes. Designed 1:5 matched case-control study for breast cancer genomic research. Executed GWAS on Linux using PLINK and generated publication-ready visualizations with R and LocusZoom.</p>
-                    </div>
-                </div>
-                <div class="resume-item">
-                    <span class="resume-date">Mar 2018 – Jul 2022</span>
-                    <div class="resume-details">
-                        <h4>Ph.D. Researcher</h4>
-                        <p class="institution">Genomics Research Center, Academia Sinica, Taipei, Taiwan</p>
-                        <p>Investigated molecular mechanisms by which high-sugar diets induce pancreatic DNA damage and promote carcinogenesis. Performed LC-MS metabolomics for dNTP pool quantification. Developed high-content imaging assays (96-well format) for DNA damage and protein glycosylation screening. Conducted multiplex IHC + RNA SCOPE on precancerous pancreatic lesions.</p>
-                    </div>
-                </div>
-            </div>
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="section-head"><span class="num">§ 03</span><h2>Contact</h2><span class="rule"></span></div>
+      <div class="contact-grid">
+        <div class="contact-row"><span class="k">Email</span><a href="mailto:dynush@gmail.com">dynush@gmail.com</a></div>
+        <div class="contact-row"><span class="k">ORCID</span><a href="https://orcid.org/0009-0004-8990-9823" target="_blank" rel="noopener">0009-0004-8990-9823</a></div>
+        <div class="contact-row"><span class="k">GitHub</span><a href="https://github.com/YuanShengHsu" target="_blank" rel="noopener">github.com/YuanShengHsu</a></div>
+        <div class="contact-row"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/jan-hsu-6794aa2ab/" target="_blank" rel="noopener">jan-hsu-6794aa2ab</a></div>
+        <div class="contact-row"><span class="k">CV</span><a href="CV.pdf" target="_blank" rel="noopener">CV.pdf</a></div>
+        <div class="contact-row"><span class="k">Location</span><span class="plainv">Taichung, Taiwan</span></div>
+      </div>
+    </div>
+  </section>
+</main>
 
-            <div class="resume-section">
-                <h3 class="resume-section-title">Selected Achievements</h3>
-                <div class="resume-item">
-                    <span class="resume-date">2022</span>
-                    <div class="resume-details">
-                        <h4>Featured Research Publication</h4>
-                        <p class="institution">Genomics Research Center, Academia Sinica</p>
-                        <p>Research on high-sugar diet-induced pancreatic DNA damage featured by the research center.</p>
-                    </div>
-                </div>
-                <div class="resume-item">
-                    <span class="resume-date">Training</span>
-                    <div class="resume-details">
-                        <h4>Medical Image Recognition AI Course</h4>
-                        <p class="institution">CNN Models with Python + PyTorch</p>
-                        <p>Built and validated convolutional neural network models using Python and PyTorch on Kaggle datasets.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<footer>
+  <div class="wrap">
+    <p>© 2026 Yuan-Sheng (Jan) Hsu</p>
+    <p>Clinical · Wet lab · Dry lab · Real-world evidence</p>
+  </div>
+</footer>
 
-        <hr>
-
-        <section id="skills">
-            <h2 class="section-header">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Data & Analytics</h4>
-                    <ul>
-                        <li>SQL</li>
-                        <li>R (visualization, stats)</li>
-                        <li>Python (PyTorch)</li>
-                        <li>PLINK / GWAS</li>
-                        <li>LocusZoom</li>
-                        <li>Linux</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Biomedical</h4>
-                    <ul>
-                        <li>Western Blot, IP, IF</li>
-                        <li>ELISA, LC-MS</li>
-                        <li>High-Content Screening</li>
-                        <li>Multiplex IHC</li>
-                        <li>RNA SCOPE</li>
-                        <li>Confocal Microscopy</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Analytical</h4>
-                    <ul>
-                        <li>Case-Control Design</li>
-                        <li>Cohort Data Extraction</li>
-                        <li>GWAS Analysis</li>
-                        <li>Data Warehouse</li>
-                        <li>Animal Model Design</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Languages</h4>
-                    <ul>
-                        <li>Mandarin (Native)</li>
-                        <li>English (Fluent)</li>
-                        <li>Japanese (JLPT N1)</li>
-                        <li>German (Goethe B2)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <hr>
-
-        <section id="news">
-            <h2 class="section-header">News</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <span class="news-date">03/2025 •</span>
-                    <span class="news-content">Started as Physician at <strong>Taichung Veterans General Hospital</strong></span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">2024 •</span>
-                    <span class="news-content">Completed <strong>M.D./Ph.D.</strong> at China Medical University</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">2022 •</span>
-                    <span class="news-content">Research featured by <strong>Genomics Research Center, Academia Sinica</strong></span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">2022 •</span>
-                    <span class="news-content">Completed Ph.D. research on pancreatic cancer mechanisms</span>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Yuan-Sheng Hsu · M.D., Ph.D. · Physician-Scientist</p>
-    </footer>
+<script>
+  window.addEventListener('load', function(){ var f=document.getElementById('strata'); if(f) f.classList.add('animate'); });
+  var io=new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }); },{threshold:.18});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
 </body>
 </html>
